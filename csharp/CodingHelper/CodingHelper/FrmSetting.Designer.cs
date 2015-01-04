@@ -57,22 +57,22 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miClose,
-            this.miSet});
+            this.miSet,
+            this.miClose});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(99, 48);
             // 
             // miClose
             // 
             this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(152, 22);
+            this.miClose.Size = new System.Drawing.Size(98, 22);
             this.miClose.Text = "닫기";
             this.miClose.Click += new System.EventHandler(this.menuItem_Click);
             // 
             // miSet
             // 
             this.miSet.Name = "miSet";
-            this.miSet.Size = new System.Drawing.Size(152, 22);
+            this.miSet.Size = new System.Drawing.Size(98, 22);
             this.miSet.Text = "설정";
             this.miSet.Click += new System.EventHandler(this.menuItem_Click);
             // 

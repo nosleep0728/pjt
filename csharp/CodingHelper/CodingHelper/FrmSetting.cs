@@ -58,9 +58,8 @@ namespace CodingHelper
         private void FrmSetting_Load(object sender, EventArgs e)
         {
             int id = 0;     // The id of the hotkey. 
-            RegisterHotKey(this.Handle, id, (int)KeyModifier.Shift, Keys.A.GetHashCode());       // Register Shift + A as global hotkey. 
-
-
+            //RegisterHotKey(this.Handle, id, (int)KeyModifier.Shift, Keys.A.GetHashCode());       // Register Shift + A as global hotkey. 
+            RegisterHotKey(this.Handle, id, (int)KeyModifier.Alt, Keys.Z.GetHashCode());       // Register Shift + A as global hotkey. 
             notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
         }
 
@@ -77,10 +76,22 @@ namespace CodingHelper
                 KeyModifier modifier = (KeyModifier)((int)m.LParam & 0xFFFF);       // The modifier of the hotkey that was pressed.
                 int id = m.WParam.ToInt32();                                        // The id of the hotkey that was pressed.
 
-                //var form = new Form2();
-                //form.ShowDialog();
-                MessageBox.Show("test");
+                doHotKey();
             }
+        }
+
+        private void doHotKey()
+        {
+            WinUtil inst = WinUtil.Inst;
+            IntPtr hWnd = WinUtil.GetForegroundWindow();
+
+            var form = new FrmSearch();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                inst.SendPasteMessage(hWnd);
+            }
+            
+
         }
 
 
