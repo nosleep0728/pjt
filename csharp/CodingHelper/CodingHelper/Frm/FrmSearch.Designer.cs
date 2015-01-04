@@ -1,4 +1,4 @@
-﻿namespace CodingHelper
+﻿namespace CodingHelper.Frm
 {
     partial class FrmSearch
     {

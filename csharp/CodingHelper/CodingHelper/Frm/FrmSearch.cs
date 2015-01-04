@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CodingHelper
+namespace CodingHelper.Frm
 {
     public partial class FrmSearch : Form
     {

@@ -44,16 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmSearch.cs">
+    <Compile Include="Frm\FrmSearch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSearch.Designer.cs">
+    <Compile Include="Frm\FrmSearch.Designer.cs">
       <DependentUpon>FrmSearch.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSetting.cs">
+    <Compile Include="Frm\FrmSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSetting.Designer.cs">
+    <Compile Include="Frm\FrmSetting.Designer.cs">
       <DependentUpon>FrmSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -65,10 +65,10 @@
     </Compile>
     <Compile Include="Util\Ini.cs" />
     <Compile Include="Util\WinUtil.cs" />
-    <EmbeddedResource Include="FrmSearch.resx">
+    <EmbeddedResource Include="Frm\FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSetting.resx">
+    <EmbeddedResource Include="Frm\FrmSetting.resx">
       <DependentUpon>FrmSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -101,6 +101,7 @@
   <ItemGroup>
     <None Include="Resources\Icon1.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
