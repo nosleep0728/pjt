@@ -56,6 +56,7 @@
     <Compile Include="Frm\FrmSetting.Designer.cs">
       <DependentUpon>FrmSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\KVVO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resource1.Designer.cs">
@@ -63,6 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="Service\KVService.cs" />
     <Compile Include="Util\Ini.cs" />
     <Compile Include="Util\WinUtil.cs" />
     <EmbeddedResource Include="Frm\FrmSearch.resx">
@@ -101,7 +103,11 @@
   <ItemGroup>
     <None Include="Resources\Icon1.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Data\WordList.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -26,8 +26,12 @@ namespace CodingHelper.Frm
 
         private void FrmSearch_Load(object sender, EventArgs e)
         {
-
             WinUtil.SetForegroundWindow(this.Handle);
+        }
+
+        private void LoadFile()
+        {
+
         }
 
         private void btnCloseApp_Click(object sender, EventArgs e)
