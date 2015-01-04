@@ -33,13 +33,14 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.miClose = new System.Windows.Forms.ToolStripMenuItem();
             this.miSet = new System.Windows.Forms.ToolStripMenuItem();
+            this.miClose = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(49, 230);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
@@ -62,13 +63,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(99, 48);
             // 
-            // miClose
-            // 
-            this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(98, 22);
-            this.miClose.Text = "닫기";
-            this.miClose.Click += new System.EventHandler(this.menuItem_Click);
-            // 
             // miSet
             // 
             this.miSet.Name = "miSet";
@@ -76,10 +70,18 @@
             this.miSet.Text = "설정";
             this.miSet.Click += new System.EventHandler(this.menuItem_Click);
             // 
+            // miClose
+            // 
+            this.miClose.Name = "miClose";
+            this.miClose.Size = new System.Drawing.Size(98, 22);
+            this.miClose.Text = "닫기";
+            this.miClose.Click += new System.EventHandler(this.menuItem_Click);
+            // 
             // FrmSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(446, 265);
             this.Controls.Add(this.btnClose);
             this.Name = "FrmSetting";

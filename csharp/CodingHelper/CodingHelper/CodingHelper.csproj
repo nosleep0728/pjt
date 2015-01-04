@@ -63,7 +63,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
-    <Compile Include="WinUtil.cs" />
+    <Compile Include="Util\Ini.cs" />
+    <Compile Include="Util\WinUtil.cs" />
     <EmbeddedResource Include="FrmSearch.resx">
       <DependentUpon>FrmSearch.cs</DependentUpon>
     </EmbeddedResource>

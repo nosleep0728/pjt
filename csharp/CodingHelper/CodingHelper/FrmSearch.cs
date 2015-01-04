@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodingHelper.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,11 @@ namespace CodingHelper
         {
 
             WinUtil.SetForegroundWindow(this.Handle);
+        }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
