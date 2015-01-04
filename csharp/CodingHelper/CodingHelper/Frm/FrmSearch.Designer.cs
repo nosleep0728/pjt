@@ -31,16 +31,16 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.btnCloseApp = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOK
@@ -65,13 +65,41 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 33);
             this.panel1.TabIndex = 2;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearch.Location = new System.Drawing.Point(12, 7);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(261, 21);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyDown);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnSearch);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(279, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(101, 33);
+            this.panel3.TabIndex = 0;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.Location = new System.Drawing.Point(14, 5);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 0;
+            this.btnSearch.Text = "찾기";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -84,43 +112,6 @@
             this.panel2.Size = new System.Drawing.Size(380, 33);
             this.panel2.TabIndex = 3;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(380, 197);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.Location = new System.Drawing.Point(14, 5);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "찾기";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnSearch);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(279, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(101, 33);
-            this.panel3.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(12, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 21);
-            this.textBox1.TabIndex = 1;
-            // 
             // btnCloseApp
             // 
             this.btnCloseApp.Location = new System.Drawing.Point(272, 7);
@@ -130,6 +121,16 @@
             this.btnCloseApp.Text = "프로그램종료";
             this.btnCloseApp.UseVisualStyleBackColor = true;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 33);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(380, 197);
+            this.dataGridView1.TabIndex = 4;
             // 
             // FrmSearch
             // 
@@ -148,9 +149,9 @@
             this.Load += new System.EventHandler(this.FrmSearch_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -160,7 +161,7 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;

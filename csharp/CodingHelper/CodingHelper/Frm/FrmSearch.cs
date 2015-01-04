@@ -26,7 +26,11 @@ namespace CodingHelper.Frm
 
         private void FrmSearch_Load(object sender, EventArgs e)
         {
+            this.LoadFile();
             WinUtil.SetForegroundWindow(this.Handle);
+
+            this.txtSearch.Focus();
+            this.ActiveControl = txtSearch;
         }
 
         private void LoadFile()
@@ -37,6 +41,11 @@ namespace CodingHelper.Frm
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
