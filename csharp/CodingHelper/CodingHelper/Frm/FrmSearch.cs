@@ -60,6 +60,8 @@ namespace CodingHelper.Frm
 
                 reader.Close();
             }
+
+            kVVOBindingSource.DataSource = this.dataList;
         }
 
         private void btnCloseApp_Click(object sender, EventArgs e)

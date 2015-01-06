@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -36,11 +37,15 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCloseApp = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGrid = new System.Windows.Forms.DataGridView();
+            this.keyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kVVOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVVOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
@@ -122,15 +127,40 @@
             this.btnCloseApp.UseVisualStyleBackColor = true;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
-            // dataGridView1
+            // dataGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(380, 197);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGrid.AllowUserToAddRows = false;
+            this.dataGrid.AutoGenerateColumns = false;
+            this.dataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.keyDataGridViewTextBoxColumn,
+            this.valueDataGridViewTextBoxColumn});
+            this.dataGrid.DataSource = this.kVVOBindingSource;
+            this.dataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGrid.Location = new System.Drawing.Point(0, 33);
+            this.dataGrid.MultiSelect = false;
+            this.dataGrid.Name = "dataGrid";
+            this.dataGrid.RowTemplate.Height = 23;
+            this.dataGrid.Size = new System.Drawing.Size(380, 197);
+            this.dataGrid.TabIndex = 4;
+            // 
+            // keyDataGridViewTextBoxColumn
+            // 
+            this.keyDataGridViewTextBoxColumn.DataPropertyName = "Key";
+            this.keyDataGridViewTextBoxColumn.HeaderText = "영문";
+            this.keyDataGridViewTextBoxColumn.Name = "keyDataGridViewTextBoxColumn";
+            // 
+            // valueDataGridViewTextBoxColumn
+            // 
+            this.valueDataGridViewTextBoxColumn.DataPropertyName = "Value";
+            this.valueDataGridViewTextBoxColumn.HeaderText = "한글";
+            this.valueDataGridViewTextBoxColumn.Name = "valueDataGridViewTextBoxColumn";
+            // 
+            // kVVOBindingSource
+            // 
+            this.kVVOBindingSource.DataSource = typeof(CodingHelper.Model.KVVO);
             // 
             // FrmSearch
             // 
@@ -139,7 +169,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(380, 263);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGrid);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "FrmSearch";
@@ -151,7 +181,8 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kVVOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,7 +196,10 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGrid;
         private System.Windows.Forms.Button btnCloseApp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn keyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource kVVOBindingSource;
     }
 }
